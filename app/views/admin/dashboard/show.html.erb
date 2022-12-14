@@ -7,6 +7,6 @@
     <%= link_to [:admin, :products], class: "nav-link " do %> <%= @product_count %> Products <% end %>
   </li>
   <li class="list-group-item">
-    <%= @category_count %> Categories
+    <%= link_to [:admin, :categories], class: "nav-link " do %> <%= @category_count %> Categories <% end %>
   </li>
 </ul>
