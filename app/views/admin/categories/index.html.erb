@@ -24,7 +24,11 @@
             <%= category.name %>
           </td>
           <td>
+          <% if category.products.length === 0 %>
             <%= link_to fa_icon('trash'), [:admin, category], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+          <% else %>
+            <%= link_to fa_icon('trash'), [:admin, category], class: 'btn btn-sm btn-danger disabled', method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
           </td>
         </tr>
         <% end %>

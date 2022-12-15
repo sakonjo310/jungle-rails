@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-main.container, form {
+signup-container, form.signup-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,9 +11,10 @@ main.container, form {
 
 h1.signup {
   margin-top: 50px;
+  text-align: center;
 }
 
-input.form-control {
+input.signup {
   width: 300px;
   margin-bottom: 15px;
 }
