@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       redirect_to '/signup'
+      flash[:message] = "Missing Fields"
     end
   end
 

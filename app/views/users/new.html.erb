@@ -1,6 +1,11 @@
 <h1 class="signup">Signup</h1>
 <br>
-<%= form_for :user, url: '/users' do |f| %>
+<% if flash.any? %>
+  <% flash.each do |type, msg| %>
+    <div class="flash"><%= msg %></div>
+  <% end %>
+<% end %>
+<%= form_for :user, class: "needs-validation", url: '/users' do |f| %>
   <div class="form-group">
     <%= f.text_field :first_name, class: 'form-control', placeholder: "First Name" %>
   </div>
