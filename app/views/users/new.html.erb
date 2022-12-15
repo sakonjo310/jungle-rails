@@ -2,16 +2,14 @@
   <h1 class="signup">Signup</h1>
   <br>
   <%= form_for @user, :html => {:class => "signup-form"}, url: '/users' do |f| %>
-    <% if f.object.errors.any? %>
-      <div class="alert alert-danger">
-        <strong>The following errors occured:</strong>
-        <ul>
-          <% f.object.errors.full_messages.each do |error| %>
-            <li><%= error %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <% if notice %>
+      <div class="signup-flash alert alert-danger" role="alert"><%= notice %></div>
+	  <% end %>
+	
+	  <% if alert %>
+      <div class="signup-flash alert alert-danger" role="alert"><%= alert %></div>
+	  <% end %>
+
     <div class="form-group">
       <%= f.text_field :first_name, class: 'form-control signup', placeholder: "First Name" %>
     </div>

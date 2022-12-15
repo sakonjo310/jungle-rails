@@ -1,15 +1,17 @@
-<h1 class="login">Login</h1>
-<br>
-<% if flash.any? %>
-  <% flash.each do |type, msg| %>
-    <div class="flash"><%= msg %></div>
+<div class="login-container">
+  <h1 class="login">Login</h1>
+  <br>
+  <% if flash.any? %>
+    <% flash.each do |type, msg| %>
+      <div class="signup-flash alert alert-danger" role="alert"><%= msg %></div>
+    <% end %>
   <% end %>
-<% end %>
-<%= form_tag '/login', {:class => "signup-form"} do %>
-  <div class="form-group">
-  <%= text_field_tag :email, "", class: 'form-control signup', placeholder: "Email" %>
-  </div>
-  <%= password_field_tag :password, "", class: 'form-control signup', placeholder: "Password" %>
-  <%= submit_tag "Submit", class: 'btn btn-primary' %>
+  <%= form_tag '/login', {:class => "signup-form"} do %>
+    <div class="form-group">
+    <%= text_field_tag :email, "", class: 'form-control signup', placeholder: "Email" %>
+    </div>
+    <%= password_field_tag :password, "", class: 'form-control signup', placeholder: "Password" %>
+    <%= submit_tag "Submit", class: 'btn btn-primary' %>
 
-<% end %>
+  <% end %>
+</div>
