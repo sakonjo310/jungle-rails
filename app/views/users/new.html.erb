@@ -1,12 +1,17 @@
 <div class="signup-container">
   <h1 class="signup">Signup</h1>
   <br>
-  <% if flash.any? %>
-    <% flash.each do |type, msg| %>
-      <div class="flash"><%= msg %></div>
+  <%= form_for @user, :html => {:class => "signup-form"}, url: '/users' do |f| %>
+    <% if f.object.errors.any? %>
+      <div class="alert alert-danger">
+        <strong>The following errors occured:</strong>
+        <ul>
+          <% f.object.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
-  <% end %>
-  <%= form_for :user, :html => {:class => "signup-form"}, url: '/users' do |f| %>
     <div class="form-group">
       <%= f.text_field :first_name, class: 'form-control signup', placeholder: "First Name" %>
     </div>
