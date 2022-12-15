@@ -2,6 +2,7 @@
   <h1 class="signup">Signup</h1>
   <br>
   <%= form_for @user, :html => {:class => "signup-form"}, url: '/users' do |f| %>
+<%# ----- Error Messages ----- %>
     <% if notice %>
       <div class="signup-flash alert alert-danger" role="alert"><%= notice %></div>
 	  <% end %>
@@ -9,7 +10,7 @@
 	  <% if alert %>
       <div class="signup-flash alert alert-danger" role="alert"><%= alert %></div>
 	  <% end %>
-
+<%# ----- Signup Form ----- %>
     <div class="form-group">
       <%= f.text_field :first_name, class: 'form-control signup', placeholder: "First Name" %>
     </div>

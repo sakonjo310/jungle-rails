@@ -1,11 +1,15 @@
 <div class="login-container">
   <h1 class="login">Login</h1>
   <br>
-  <% if flash.any? %>
-    <% flash.each do |type, msg| %>
-      <div class="signup-flash alert alert-danger" role="alert"><%= msg %></div>
-    <% end %>
+<%# ----- Error Messages ----- %>
+  <% if notice %>
+    <div class="signup-flash alert alert-danger" role="alert"><%= notice %></div>
   <% end %>
+
+  <% if alert %>
+    <div class="signup-flash alert alert-danger" role="alert"><%= alert %></div>
+  <% end %>
+<%# ----- Login Form ----- %>
   <%= form_tag '/login', {:class => "signup-form"} do %>
     <div class="form-group">
     <%= text_field_tag :email, "", class: 'form-control signup', placeholder: "Email" %>
