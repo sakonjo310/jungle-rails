@@ -23,6 +23,14 @@ CypressRails.hooks.before_server_start do
     quantity: 18,
     price: 24.99
   })
+
+  User.create!({
+    first_name: 'Satoe',
+    last_name: 'Sakonjo',
+    email: 'sako@gmail.com',
+    password_digest: '1234'
+  })
+  
 end
 
 CypressRails.hooks.after_transaction_start do
