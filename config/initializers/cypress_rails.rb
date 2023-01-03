@@ -28,9 +28,10 @@ CypressRails.hooks.before_server_start do
     first_name: 'Satoe',
     last_name: 'Sakonjo',
     email: 'sako@gmail.com',
-    password_digest: '1234'
+    password: '1234',
+    password_confirmation: '1234'
   })
-  
+
 end
 
 CypressRails.hooks.after_transaction_start do
